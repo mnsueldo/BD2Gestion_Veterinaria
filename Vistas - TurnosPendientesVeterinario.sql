@@ -10,10 +10,10 @@ SELECT
     M.Nombre AS NombreMascota,
     ET.TipoEstado
 FROM Turnos AS T
-JOIN Veterinarios AS V ON T.IDVeterinario = V.IDVeterinario
-JOIN Mascotas AS M ON T.NroHistoriaClinica = M.NroHistoriaClinica
-JOIN Dueños AS D ON M.IDDueño = D.IDDueño
-JOIN EstadoTurnos AS ET ON T.IDEstadoTurno = ET.IDEstadoTurno
+INNER JOIN Veterinarios AS V ON T.IDVeterinario = V.IDVeterinario
+INNER JOIN Mascotas AS M ON T.NroHistoriaClinica = M.NroHistoriaClinica
+INNER JOIN Dueños AS D ON M.IDDueño = D.IDDueño
+INNER JOIN EstadoTurnos AS ET ON T.IDEstadoTurno = ET.IDEstadoTurno
 WHERE ET.TipoEstado = 'En espera'
 AND T.Activo = 1;
 
