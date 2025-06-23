@@ -13,9 +13,9 @@ SELECT
     M.Peso,
     M.FechaRegistro
 FROM Mascotas AS M
-JOIN Dueños AS D ON M.IDDueño = D.IDDueño
-JOIN Razas AS R ON M.IDRaza = R.IDRaza
-JOIN Especies AS E ON R.IDEspecie = E.IDEspecie;
+INNER JOIN Dueños AS D ON M.IDDueño = D.IDDueño
+INNER JOIN Razas AS R ON M.IDRaza = R.IDRaza
+INNER JOIN Especies AS E ON R.IDEspecie = E.IDEspecie;
 
 
 
