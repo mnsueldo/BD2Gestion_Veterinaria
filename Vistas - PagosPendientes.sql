@@ -13,10 +13,10 @@ SELECT
     P.Pagado
 
 FROM Pagos AS P
-JOIN HistoriasClinicas AS HC ON P.IDRegistro = HC.IDRegistro
-JOIN Turnos AS T ON HC.IDTurno = T.IDTurno
-JOIN Mascotas AS M ON T.NroHistoriaClinica = M.NroHistoriaClinica
-JOIN Dueños AS D ON M.IDDueño = D.IDDueño
-JOIN Veterinarios AS V ON T.IDVeterinario = V.IDVeterinario
-JOIN MetodosPagos AS MP ON P.IDMetodosPago = MP.IDMetodosPago
+INNER JOIN HistoriasClinicas AS HC ON P.IDRegistro = HC.IDRegistro
+INNER JOIN Turnos AS T ON HC.IDTurno = T.IDTurno
+INNER JOIN Mascotas AS M ON T.NroHistoriaClinica = M.NroHistoriaClinica
+INNER JOIN Dueños AS D ON M.IDDueño = D.IDDueño
+INNER JOIN Veterinarios AS V ON T.IDVeterinario = V.IDVeterinario
+INNER JOIN MetodosPagos AS MP ON P.IDMetodosPago = MP.IDMetodosPago
 WHERE P.Pagado = 0;
